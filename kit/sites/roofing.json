@@ -1,0 +1,23 @@
+{
+ "slug": "roofing",
+ "name": "Roofing Automation Pack",
+ "brand": "Roofing Pulse",
+ "locations": [
+  "Zx4ljALpEkPs1g0ryhq8"
+ ],
+ "theme": {
+  "accent": "#F97316"
+ },
+ "modules": [
+  "skin",
+  "contrast",
+  "sidebar",
+  "pulse",
+  "board"
+ ],
+ "pulse": {
+  "checklistField": "Pulse Checklist State",
+  "playbook": "roofing"
+ },
+ "apiProxy": ""
+}

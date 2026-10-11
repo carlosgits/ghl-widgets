@@ -554,6 +554,7 @@
     patched.__vdPatched = true; history[m] = patched;
   });
   window.addEventListener("popstate", function () { setTimeout(render, 120); });
+  window.addEventListener("bmw:change", function () { lastSig = null; setTimeout(render, 60); });   // site, theme or field ids changed
 
   function init() { render(); var n = 0, t = setInterval(function () { render(); if (++n >= 60) clearInterval(t); }, 250); }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();

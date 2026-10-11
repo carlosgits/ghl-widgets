@@ -1,0 +1,23 @@
+{
+ "slug": "collision-repair",
+ "name": "Collision Repair Automation Pack",
+ "brand": "Collision Repair Pulse",
+ "locations": [
+  "TZ1SAOcaVXuobLjRGLIW"
+ ],
+ "theme": {
+  "accent": "#EF4444"
+ },
+ "modules": [
+  "skin",
+  "contrast",
+  "sidebar",
+  "pulse",
+  "board"
+ ],
+ "pulse": {
+  "checklistField": "Pulse Checklist State",
+  "playbook": "collision-repair"
+ },
+ "apiProxy": ""
+}

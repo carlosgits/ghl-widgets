@@ -1,0 +1,307 @@
+{
+ "stages": [
+  "New Inquiry",
+  "Attempting Contact",
+  "Estimate Booked",
+  "Estimate Completed",
+  "Insurance Claim Filed",
+  "Insurance Approval",
+  "Parts Ordered",
+  "In Repair",
+  "Quality Check",
+  "Ready for Pickup",
+  "Delivered",
+  "Lost"
+ ],
+ "reasonField": "",
+ "reasons": [],
+ "fields": {
+  "carrier": {
+   "name": "Insurance Carrier",
+   "kind": "select",
+   "options": [
+    "GEICO",
+    "State Farm",
+    "Progressive",
+    "Allstate",
+    "USAA",
+    "Customer Pay"
+   ]
+  },
+  "drivable": {
+   "name": "Vehicle Drivable",
+   "kind": "select",
+   "options": [
+    "Yes",
+    "No"
+   ]
+  },
+  "rental": {
+   "name": "Rental Needed",
+   "kind": "select",
+   "options": [
+    "Yes",
+    "No"
+   ]
+  },
+  "area": {
+   "name": "Damage Area",
+   "kind": "select",
+   "options": [
+    "Front End",
+    "Rear End",
+    "Driver Side",
+    "Passenger Side",
+    "Hail Damage",
+    "Multiple Areas"
+   ]
+  },
+  "eta": {
+   "name": "Estimated Completion Date",
+   "kind": "date"
+  }
+ },
+ "checklists": {
+  "New Inquiry": [
+   {
+    "id": "call-within-5-minutes-sp",
+    "label": "Call within 5 minutes (speed to lead)",
+    "cta": "📞 Call",
+    "action": "call"
+   },
+   {
+    "id": "is-the-vehicle-drivable",
+    "label": "Is the vehicle drivable?",
+    "cta": "✏ Set",
+    "action": "setfield",
+    "meta": {
+     "key": "drivable"
+    }
+   },
+   {
+    "id": "set-the-damage-area",
+    "label": "Set the damage area",
+    "cta": "✏ Set",
+    "action": "setfield",
+    "meta": {
+     "key": "area"
+    }
+   }
+  ],
+  "Attempting Contact": [
+   {
+    "id": "call-attempt-log-the-res",
+    "label": "Call attempt + log the result",
+    "cta": "📞 Call",
+    "action": "call"
+   },
+   {
+    "id": "text-the-estimate-bookin",
+    "label": "Text the estimate booking link",
+    "cta": "📝 Note",
+    "action": "note",
+    "meta": {
+     "template": "Text sent: "
+    }
+   },
+   {
+    "id": "after-6-tries-with-no-an",
+    "label": "After 6 tries with no answer, move to Lost",
+    "cta": "➡ Move",
+    "action": "stage"
+   }
+  ],
+  "Estimate Booked": [
+   {
+    "id": "confirm-the-estimate-tim",
+    "label": "Confirm the estimate time",
+    "cta": "📅 Book",
+    "action": "calendar"
+   },
+   {
+    "id": "set-the-insurance-carrie",
+    "label": "Set the insurance carrier",
+    "cta": "✏ Set",
+    "action": "setfield",
+    "meta": {
+     "key": "carrier"
+    }
+   }
+  ],
+  "Estimate Completed": [
+   {
+    "id": "send-the-estimate",
+    "label": "Send the estimate",
+    "cta": "📝 Note",
+    "action": "note",
+    "meta": {
+     "template": "Estimate: "
+    }
+   },
+   {
+    "id": "does-the-customer-need-a",
+    "label": "Does the customer need a rental?",
+    "cta": "✏ Set",
+    "action": "setfield",
+    "meta": {
+     "key": "rental"
+    }
+   }
+  ],
+  "Insurance Claim Filed": [
+   {
+    "id": "log-the-claim-number",
+    "label": "Log the claim number",
+    "cta": "📝 Note",
+    "action": "note",
+    "meta": {
+     "template": "Claim #: "
+    }
+   },
+   {
+    "id": "call-the-adjuster",
+    "label": "Call the adjuster",
+    "cta": "📞 Call",
+    "action": "call"
+   }
+  ],
+  "Insurance Approval": [
+   {
+    "id": "note-the-approved-amount",
+    "label": "Note the approved amount",
+    "cta": "📝 Note",
+    "action": "note",
+    "meta": {
+     "template": "Approved: "
+    }
+   },
+   {
+    "id": "book-the-drop-off",
+    "label": "Book the drop-off",
+    "cta": "📅 Book",
+    "action": "calendar"
+   }
+  ],
+  "Parts Ordered": [
+   {
+    "id": "log-the-parts-eta",
+    "label": "Log the parts ETA",
+    "cta": "📝 Note",
+    "action": "note",
+    "meta": {
+     "template": "Parts ETA: "
+    }
+   },
+   {
+    "id": "set-the-estimated-comple",
+    "label": "Set the estimated completion date",
+    "cta": "✏ Set",
+    "action": "setfield",
+    "meta": {
+     "key": "eta",
+     "quick": true
+    }
+   }
+  ],
+  "In Repair": [
+   {
+    "id": "send-a-progress-update",
+    "label": "Send a progress update",
+    "cta": "📝 Note",
+    "action": "note",
+    "meta": {
+     "template": "Update: "
+    }
+   },
+   {
+    "id": "text-a-photo-of-the-repa",
+    "label": "Text a photo of the repair",
+    "cta": "📝 Note",
+    "action": "note",
+    "meta": {
+     "template": "Photo sent: "
+    }
+   }
+  ],
+  "Quality Check": [
+   {
+    "id": "final-inspection-done",
+    "label": "Final inspection done",
+    "cta": "📝 Note",
+    "action": "note",
+    "meta": {
+     "template": "QC: "
+    }
+   },
+   {
+    "id": "move-to-ready-for-pickup",
+    "label": "Move to Ready for Pickup",
+    "cta": "➡ Move",
+    "action": "stage"
+   }
+  ],
+  "Ready for Pickup": [
+   {
+    "id": "call-to-schedule-pickup",
+    "label": "Call to schedule pickup",
+    "cta": "📞 Call",
+    "action": "call"
+   },
+   {
+    "id": "collect-the-deductible",
+    "label": "Collect the deductible",
+    "cta": "📝 Note",
+    "action": "note",
+    "meta": {
+     "template": "Deductible: "
+    }
+   }
+  ],
+  "Delivered": [
+   {
+    "id": "ask-for-a-google-review",
+    "label": "Ask for a Google review",
+    "cta": "🏷 Tag",
+    "action": "tag",
+    "meta": {
+     "tag": "review request"
+    }
+   },
+   {
+    "id": "ask-for-referrals",
+    "label": "Ask for referrals",
+    "cta": "🏷 Tag",
+    "action": "tag",
+    "meta": {
+     "tag": "referral ask"
+    }
+   }
+  ],
+  "Lost": [
+   {
+    "id": "pick-the-lost-reason-and",
+    "label": "Pick the lost reason and tag it",
+    "cta": "🏷 Tag",
+    "action": "tag",
+    "meta": {
+     "tag": "lost reason"
+    }
+   },
+   {
+    "id": "confirm-the-contact-left",
+    "label": "Confirm the contact left every active drip",
+    "cta": "👁 View",
+    "action": "navigate"
+   },
+   {
+    "id": "add-to-long-term-nurture",
+    "label": "Add to long-term nurture if the door is still open",
+    "cta": "📝 Note",
+    "action": "note",
+    "meta": {
+     "template": "Nurture note: "
+    }
+   }
+  ]
+ }
+}

@@ -1,0 +1,347 @@
+{
+ "stages": [
+  "New Lead",
+  "Attempting Contact",
+  "Bill Review Booked",
+  "Bill Review Completed",
+  "Site Survey Booked",
+  "Proposal Sent",
+  "Financing Approved",
+  "Contract Signed",
+  "Permit Submitted",
+  "Install Scheduled",
+  "Installed",
+  "PTO Granted",
+  "Lost"
+ ],
+ "reasonField": "",
+ "reasons": [],
+ "fields": {
+  "utility": {
+   "name": "Utility Provider",
+   "kind": "select",
+   "options": [
+    "FPL",
+    "Duke Energy",
+    "TECO",
+    "JEA",
+    "Other"
+   ]
+  },
+  "ownership": {
+   "name": "Home Ownership",
+   "kind": "select",
+   "options": [
+    "Owner",
+    "Renter"
+   ]
+  },
+  "roof": {
+   "name": "Roof Condition",
+   "kind": "select",
+   "options": [
+    "Good",
+    "Needs Repair",
+    "Unknown"
+   ]
+  },
+  "shading": {
+   "name": "Shading",
+   "kind": "select",
+   "options": [
+    "None",
+    "Partial",
+    "Heavy"
+   ]
+  },
+  "credit": {
+   "name": "Credit Range",
+   "kind": "select",
+   "options": [
+    "720 and above",
+    "680 to 719",
+    "640 to 679",
+    "Below 640"
+   ]
+  },
+  "financing": {
+   "name": "Financing Type",
+   "kind": "select",
+   "options": [
+    "Cash",
+    "Solar Loan",
+    "Lease",
+    "PPA"
+   ]
+  },
+  "survey": {
+   "name": "Site Survey Date",
+   "kind": "date"
+  }
+ },
+ "checklists": {
+  "New Lead": [
+   {
+    "id": "call-within-5-minutes-sp",
+    "label": "Call within 5 minutes (speed to lead)",
+    "cta": "📞 Call",
+    "action": "call"
+   },
+   {
+    "id": "confirm-they-own-the-hom",
+    "label": "Confirm they own the home",
+    "cta": "✏ Set",
+    "action": "setfield",
+    "meta": {
+     "key": "ownership"
+    }
+   },
+   {
+    "id": "set-the-utility-provider",
+    "label": "Set the utility provider",
+    "cta": "✏ Set",
+    "action": "setfield",
+    "meta": {
+     "key": "utility"
+    }
+   }
+  ],
+  "Attempting Contact": [
+   {
+    "id": "call-attempt-log-the-res",
+    "label": "Call attempt + log the result",
+    "cta": "📞 Call",
+    "action": "call"
+   },
+   {
+    "id": "text-the-bill-review-boo",
+    "label": "Text the bill review booking link",
+    "cta": "📝 Note",
+    "action": "note",
+    "meta": {
+     "template": "Text sent: "
+    }
+   },
+   {
+    "id": "after-6-tries-with-no-an",
+    "label": "After 6 tries with no answer, move to nurture",
+    "cta": "➡ Move",
+    "action": "stage"
+   }
+  ],
+  "Bill Review Booked": [
+   {
+    "id": "confirm-the-bill-review",
+    "label": "Confirm the bill review",
+    "cta": "📅 Book",
+    "action": "calendar"
+   },
+   {
+    "id": "ask-them-to-have-a-recen",
+    "label": "Ask them to have a recent bill ready",
+    "cta": "📝 Note",
+    "action": "note",
+    "meta": {
+     "template": "Bill reminder: "
+    }
+   }
+  ],
+  "Bill Review Completed": [
+   {
+    "id": "set-roof-condition",
+    "label": "Set roof condition",
+    "cta": "✏ Set",
+    "action": "setfield",
+    "meta": {
+     "key": "roof"
+    }
+   },
+   {
+    "id": "set-shading",
+    "label": "Set shading",
+    "cta": "✏ Set",
+    "action": "setfield",
+    "meta": {
+     "key": "shading"
+    }
+   },
+   {
+    "id": "book-the-site-survey",
+    "label": "Book the site survey",
+    "cta": "📅 Book",
+    "action": "calendar"
+   }
+  ],
+  "Site Survey Booked": [
+   {
+    "id": "set-the-site-survey-date",
+    "label": "Set the site survey date",
+    "cta": "✏ Set",
+    "action": "setfield",
+    "meta": {
+     "key": "survey"
+    }
+   },
+   {
+    "id": "confirm-the-day-before",
+    "label": "Confirm the day before",
+    "cta": "📞 Call",
+    "action": "call"
+   }
+  ],
+  "Proposal Sent": [
+   {
+    "id": "walk-through-the-proposa",
+    "label": "Walk through the proposal",
+    "cta": "📞 Call",
+    "action": "call"
+   },
+   {
+    "id": "set-the-financing-type",
+    "label": "Set the financing type",
+    "cta": "✏ Set",
+    "action": "setfield",
+    "meta": {
+     "key": "financing"
+    }
+   }
+  ],
+  "Financing Approved": [
+   {
+    "id": "set-the-credit-range",
+    "label": "Set the credit range",
+    "cta": "✏ Set",
+    "action": "setfield",
+    "meta": {
+     "key": "credit"
+    }
+   },
+   {
+    "id": "send-the-contract",
+    "label": "Send the contract",
+    "cta": "📝 Note",
+    "action": "note",
+    "meta": {
+     "template": "Contract sent: "
+    }
+   }
+  ],
+  "Contract Signed": [
+   {
+    "id": "start-the-permit-package",
+    "label": "Start the permit package",
+    "cta": "📝 Note",
+    "action": "note",
+    "meta": {
+     "template": "Permit: "
+    }
+   },
+   {
+    "id": "welcome-text-with-next-s",
+    "label": "Welcome text with next steps",
+    "cta": "📝 Note",
+    "action": "note",
+    "meta": {
+     "template": "Welcome: "
+    }
+   }
+  ],
+  "Permit Submitted": [
+   {
+    "id": "log-the-permit-number",
+    "label": "Log the permit number",
+    "cta": "📝 Note",
+    "action": "note",
+    "meta": {
+     "template": "Permit #: "
+    }
+   },
+   {
+    "id": "update-the-homeowner-wee",
+    "label": "Update the homeowner weekly",
+    "cta": "📞 Call",
+    "action": "call"
+   }
+  ],
+  "Install Scheduled": [
+   {
+    "id": "confirm-the-install-date",
+    "label": "Confirm the install date",
+    "cta": "📅 Book",
+    "action": "calendar"
+   },
+   {
+    "id": "text-the-crew-arrival-wi",
+    "label": "Text the crew arrival window",
+    "cta": "📝 Note",
+    "action": "note",
+    "meta": {
+     "template": "Arrival window: "
+    }
+   }
+  ],
+  "Installed": [
+   {
+    "id": "ask-for-a-google-review",
+    "label": "Ask for a Google review",
+    "cta": "🏷 Tag",
+    "action": "tag",
+    "meta": {
+     "tag": "review request"
+    }
+   },
+   {
+    "id": "submit-for-permission-to",
+    "label": "Submit for permission to operate",
+    "cta": "➡ Move",
+    "action": "stage"
+   }
+  ],
+  "PTO Granted": [
+   {
+    "id": "send-the-system-walkthro",
+    "label": "Send the system walkthrough",
+    "cta": "📝 Note",
+    "action": "note",
+    "meta": {
+     "template": "Walkthrough: "
+    }
+   },
+   {
+    "id": "ask-for-referrals",
+    "label": "Ask for referrals",
+    "cta": "🏷 Tag",
+    "action": "tag",
+    "meta": {
+     "tag": "referral ask"
+    }
+   }
+  ],
+  "Lost": [
+   {
+    "id": "pick-the-lost-reason-and",
+    "label": "Pick the lost reason and tag it",
+    "cta": "🏷 Tag",
+    "action": "tag",
+    "meta": {
+     "tag": "lost reason"
+    }
+   },
+   {
+    "id": "confirm-the-contact-left",
+    "label": "Confirm the contact left every active drip",
+    "cta": "👁 View",
+    "action": "navigate"
+   },
+   {
+    "id": "add-to-long-term-nurture",
+    "label": "Add to long-term nurture if the door is still open",
+    "cta": "📝 Note",
+    "action": "note",
+    "meta": {
+     "template": "Nurture note: "
+    }
+   }
+  ]
+ }
+}

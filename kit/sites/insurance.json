@@ -1,0 +1,23 @@
+{
+ "slug": "insurance",
+ "name": "Insurance Automation Pack",
+ "brand": "Insurance Pulse",
+ "locations": [
+  "3BP5xELtAcBNTUGJSZeR"
+ ],
+ "theme": {
+  "accent": "#3B82F6"
+ },
+ "modules": [
+  "skin",
+  "contrast",
+  "sidebar",
+  "pulse",
+  "board"
+ ],
+ "pulse": {
+  "checklistField": "Pulse Checklist State",
+  "playbook": "insurance"
+ },
+ "apiProxy": ""
+}

@@ -1,0 +1,302 @@
+{
+ "stages": [
+  "New Lead",
+  "Attempting Contact",
+  "Quote Call Booked",
+  "Quote Sent",
+  "Quote Follow-Up",
+  "Application Submitted",
+  "Underwriting",
+  "Policy Bound",
+  "Policy Active",
+  "Renewal Due",
+  "Renewed",
+  "Lost"
+ ],
+ "reasonField": "",
+ "reasons": [],
+ "fields": {
+  "type": {
+   "name": "Insurance Type",
+   "kind": "select",
+   "options": [
+    "Auto",
+    "Home",
+    "Auto and Home Bundle",
+    "Life",
+    "Health",
+    "Commercial"
+   ]
+  },
+  "carrier": {
+   "name": "Current Carrier",
+   "kind": "select",
+   "options": [
+    "State Farm",
+    "Progressive",
+    "GEICO",
+    "Allstate",
+    "Citizens",
+    "None",
+    "Other"
+   ]
+  },
+  "renewal": {
+   "name": "Policy Renewal Date",
+   "kind": "date"
+  }
+ },
+ "checklists": {
+  "New Lead": [
+   {
+    "id": "call-within-5-minutes-sp",
+    "label": "Call within 5 minutes (speed to lead)",
+    "cta": "📞 Call",
+    "action": "call"
+   },
+   {
+    "id": "set-the-insurance-type",
+    "label": "Set the insurance type",
+    "cta": "✏ Set",
+    "action": "setfield",
+    "meta": {
+     "key": "type"
+    }
+   },
+   {
+    "id": "set-the-current-carrier",
+    "label": "Set the current carrier",
+    "cta": "✏ Set",
+    "action": "setfield",
+    "meta": {
+     "key": "carrier"
+    }
+   }
+  ],
+  "Attempting Contact": [
+   {
+    "id": "call-attempt-log-the-res",
+    "label": "Call attempt + log the result",
+    "cta": "📞 Call",
+    "action": "call"
+   },
+   {
+    "id": "text-the-quote-booking-l",
+    "label": "Text the quote booking link",
+    "cta": "📝 Note",
+    "action": "note",
+    "meta": {
+     "template": "Text sent: "
+    }
+   },
+   {
+    "id": "after-6-tries-with-no-an",
+    "label": "After 6 tries with no answer, move to nurture",
+    "cta": "➡ Move",
+    "action": "stage"
+   }
+  ],
+  "Quote Call Booked": [
+   {
+    "id": "confirm-the-quote-call",
+    "label": "Confirm the quote call",
+    "cta": "📅 Book",
+    "action": "calendar"
+   },
+   {
+    "id": "ask-for-the-current-decl",
+    "label": "Ask for the current declarations page",
+    "cta": "📝 Note",
+    "action": "note",
+    "meta": {
+     "template": "Dec page: "
+    }
+   }
+  ],
+  "Quote Sent": [
+   {
+    "id": "walk-them-through-the-qu",
+    "label": "Walk them through the quote",
+    "cta": "📞 Call",
+    "action": "call"
+   },
+   {
+    "id": "note-the-quoted-premium",
+    "label": "Note the quoted premium",
+    "cta": "📝 Note",
+    "action": "note",
+    "meta": {
+     "template": "Quoted: "
+    }
+   }
+  ],
+  "Quote Follow-Up": [
+   {
+    "id": "follow-up-in-48-hours",
+    "label": "Follow up in 48 hours",
+    "cta": "📞 Call",
+    "action": "call"
+   },
+   {
+    "id": "handle-the-objection-and",
+    "label": "Handle the objection and log it",
+    "cta": "📝 Note",
+    "action": "note",
+    "meta": {
+     "template": "Objection: "
+    }
+   },
+   {
+    "id": "move-to-application-or-l",
+    "label": "Move to Application or Lost",
+    "cta": "➡ Move",
+    "action": "stage"
+   }
+  ],
+  "Application Submitted": [
+   {
+    "id": "confirm-documents-are-co",
+    "label": "Confirm documents are complete",
+    "cta": "📝 Note",
+    "action": "note",
+    "meta": {
+     "template": "Docs: "
+    }
+   },
+   {
+    "id": "update-the-client",
+    "label": "Update the client",
+    "cta": "📞 Call",
+    "action": "call"
+   }
+  ],
+  "Underwriting": [
+   {
+    "id": "check-underwriting-statu",
+    "label": "Check underwriting status",
+    "cta": "📝 Note",
+    "action": "note",
+    "meta": {
+     "template": "UW status: "
+    }
+   },
+   {
+    "id": "answer-underwriter-quest",
+    "label": "Answer underwriter questions",
+    "cta": "📞 Call",
+    "action": "call"
+   }
+  ],
+  "Policy Bound": [
+   {
+    "id": "send-the-welcome-and-id-",
+    "label": "Send the welcome and ID cards",
+    "cta": "📝 Note",
+    "action": "note",
+    "meta": {
+     "template": "Welcome sent: "
+    }
+   },
+   {
+    "id": "set-the-renewal-date",
+    "label": "Set the renewal date",
+    "cta": "✏ Set",
+    "action": "setfield",
+    "meta": {
+     "key": "renewal",
+     "quick": true
+    }
+   }
+  ],
+  "Policy Active": [
+   {
+    "id": "ask-for-a-google-review",
+    "label": "Ask for a Google review",
+    "cta": "🏷 Tag",
+    "action": "tag",
+    "meta": {
+     "tag": "review request"
+    }
+   },
+   {
+    "id": "cross-sell-another-line",
+    "label": "Cross-sell another line",
+    "cta": "📝 Note",
+    "action": "note",
+    "meta": {
+     "template": "Cross-sell: "
+    }
+   },
+   {
+    "id": "ask-for-referrals",
+    "label": "Ask for referrals",
+    "cta": "🏷 Tag",
+    "action": "tag",
+    "meta": {
+     "tag": "referral ask"
+    }
+   }
+  ],
+  "Renewal Due": [
+   {
+    "id": "review-the-renewal-45-da",
+    "label": "Review the renewal 45 days out",
+    "cta": "📞 Call",
+    "action": "call"
+   },
+   {
+    "id": "re-shop-if-the-premium-w",
+    "label": "Re-shop if the premium went up",
+    "cta": "📝 Note",
+    "action": "note",
+    "meta": {
+     "template": "Re-shop: "
+    }
+   }
+  ],
+  "Renewed": [
+   {
+    "id": "confirm-the-renewal-and-",
+    "label": "Confirm the renewal and thank them",
+    "cta": "📞 Call",
+    "action": "call"
+   },
+   {
+    "id": "set-the-next-renewal-dat",
+    "label": "Set the next renewal date",
+    "cta": "✏ Set",
+    "action": "setfield",
+    "meta": {
+     "key": "renewal",
+     "quick": true
+    }
+   }
+  ],
+  "Lost": [
+   {
+    "id": "pick-the-lost-reason-and",
+    "label": "Pick the lost reason and tag it",
+    "cta": "🏷 Tag",
+    "action": "tag",
+    "meta": {
+     "tag": "lost reason"
+    }
+   },
+   {
+    "id": "confirm-the-contact-left",
+    "label": "Confirm the contact left every active drip",
+    "cta": "👁 View",
+    "action": "navigate"
+   },
+   {
+    "id": "add-to-long-term-nurture",
+    "label": "Add to long-term nurture if the door is still open",
+    "cta": "📝 Note",
+    "action": "note",
+    "meta": {
+     "template": "Nurture note: "
+    }
+   }
+  ]
+ }
+}

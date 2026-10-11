@@ -1,0 +1,23 @@
+{
+ "slug": "dental",
+ "name": "Dental Automation Pack",
+ "brand": "Dental Pulse",
+ "locations": [
+  "S2QlYWXUqyq7c7z4Bc5c"
+ ],
+ "theme": {
+  "accent": "#14B8A6"
+ },
+ "modules": [
+  "skin",
+  "contrast",
+  "sidebar",
+  "pulse",
+  "board"
+ ],
+ "pulse": {
+  "checklistField": "Pulse Checklist State",
+  "playbook": "dental"
+ },
+ "apiProxy": ""
+}

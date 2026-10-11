@@ -1,0 +1,23 @@
+{
+ "slug": "solar",
+ "name": "Solar Automation Pack",
+ "brand": "Solar Pulse",
+ "locations": [
+  "h8MWFSM5F1Q6TEO9dQqf"
+ ],
+ "theme": {
+  "accent": "#84CC16"
+ },
+ "modules": [
+  "skin",
+  "contrast",
+  "sidebar",
+  "pulse",
+  "board"
+ ],
+ "pulse": {
+  "checklistField": "Pulse Checklist State",
+  "playbook": "solar"
+ },
+ "apiProxy": ""
+}

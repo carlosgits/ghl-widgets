@@ -1,0 +1,23 @@
+{
+ "slug": "personal-injury",
+ "name": "Personal Injury Automation Pack",
+ "brand": "Personal Injury Pulse",
+ "locations": [
+  "YMxqAQtNjcTpjBFZ16Lq"
+ ],
+ "theme": {
+  "accent": "#8B5CF6"
+ },
+ "modules": [
+  "skin",
+  "contrast",
+  "sidebar",
+  "pulse",
+  "board"
+ ],
+ "pulse": {
+  "checklistField": "Pulse Checklist State",
+  "playbook": "personal-injury"
+ },
+ "apiProxy": ""
+}
