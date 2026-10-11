@@ -10,7 +10,7 @@ const K = 'kit/';
 const ORDER = ['skin', 'contrast', 'sidebar', 'pulse', 'board'];
 const palette = JSON.parse(readFileSync(K + 'src/palette.json', 'utf8'));
 let version = 'dev';
-try { version = execSync('git rev-parse --short=12 HEAD').toString().trim(); } catch (e) {}
+try { version = execSync('git rev-parse --short=12 HEAD', { stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim(); } catch (e) {}
 
 const core = readFileSync(K + 'src/core.js', 'utf8')
   .replace('__PALETTE__', JSON.stringify(palette))
