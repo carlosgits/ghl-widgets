@@ -1,0 +1,809 @@
+{
+ "stages": [
+  "New Lead",
+  "Low Credit Score (Not Qualified)",
+  "Attempting Contact",
+  "Engaged",
+  "Appointment Set",
+  "Appointment Showed",
+  "Appointment No-Show",
+  "Hot Lead (1-3 months)",
+  "Future Opportunity (3-9 Months)",
+  "Long-Term Lead (9+ months)",
+  "Pre-Approved - Not Actively Searching",
+  "Investors",
+  "Application Sent (LOS)",
+  "Qualification (LOS)",
+  "Pre-Approved (LOS)",
+  "Loan Setup (LOS)",
+  "Disclosed (LOS)",
+  "Submitted to UW (LOS)",
+  "Approved w/ Conditions (LOS)",
+  "Re-submittal (LOS)",
+  "Clear to Close (LOS)",
+  "Docs out (LOS)",
+  "Docs signed (LOS)",
+  "Funded (LOS)",
+  "Post-Close Nurture",
+  "Refi Rate Watcher",
+  "Application Abandoned",
+  "Lead Long Term Nurture (Not Converted)",
+  "Ghosted",
+  "Dead /Abandon"
+ ],
+ "reasonField": "Reason Can't Buy Now",
+ "reasons": [
+  "Waiting on Taxes",
+  "Credit Repair",
+  "Down Payment Saving",
+  "Employment History",
+  "Bankruptcy / Foreclosure",
+  "Lease Pending",
+  "Selling Current Home",
+  "Debt Paydown",
+  "Spouse Coordination",
+  "Relocating Later",
+  "Loan Purpose Not Available",
+  "Investor - Waiting",
+  "Rate Watching",
+  "Other"
+ ],
+ "fields": {
+  "reasonCantBuy": {
+   "name": "Reason Can't Buy Now",
+   "kind": "select",
+   "options": [
+    "Waiting on Taxes",
+    "Credit Repair",
+    "Down Payment Saving",
+    "Employment History",
+    "Bankruptcy / Foreclosure",
+    "Lease Pending",
+    "Selling Current Home",
+    "Debt Paydown",
+    "Spouse Coordination",
+    "Relocating Later",
+    "Loan Purpose Not Available",
+    "Investor - Waiting",
+    "Rate Watching",
+    "Other"
+   ]
+  },
+  "loanPurpose": {
+   "name": "Loan Purpose",
+   "kind": "select",
+   "options": [
+    "Purchase",
+    "Refinance",
+    "HELOC",
+    "Investor",
+    "Construction"
+   ]
+  },
+  "propertyType": {
+   "name": "Property Type",
+   "kind": "select",
+   "options": [
+    "SFR",
+    "Condo",
+    "2-4 Unit",
+    "5+ Unit",
+    "Commercial"
+   ]
+  },
+  "timeline": {
+   "name": "Timeline to Close",
+   "kind": "select",
+   "options": [
+    "Under 30",
+    "30-60",
+    "60-90",
+    "3-6mo",
+    "6-12mo",
+    "Unknown"
+   ]
+  },
+  "employment": {
+   "name": "Employment Type",
+   "kind": "select",
+   "options": [
+    "W2",
+    "Self-Employment",
+    "Retired",
+    "Other"
+   ]
+  },
+  "clientTier": {
+   "name": "Client Tier",
+   "kind": "select",
+   "options": [
+    "Tier 1",
+    "Tier 2",
+    "Tier 3"
+   ]
+  },
+  "workingRealtor": {
+   "name": "Working with Realtor",
+   "kind": "select",
+   "options": [
+    "Yes",
+    "No"
+   ]
+  },
+  "preapproved": {
+   "name": "Has Pre-Approval Elsewhere",
+   "kind": "select",
+   "options": [
+    "Yes",
+    "No"
+   ]
+  },
+  "expectedReady": {
+   "name": "Expected Ready Date",
+   "kind": "date"
+  },
+  "expectedMove": {
+   "name": "Expected Move Date",
+   "kind": "date"
+  },
+  "leaseEnd": {
+   "name": "Lease End Date",
+   "kind": "date"
+  },
+  "refiStatus": {
+   "name": "Refi Rate Status",
+   "kind": "select",
+   "options": [
+    "Watching",
+    "Approaching",
+    "Hit"
+   ]
+  },
+  "refiWatch": {
+   "name": "Add to Refi Watcher",
+   "kind": "select",
+   "options": [
+    "Yes"
+   ]
+  }
+ },
+ "checklists": {
+  "New Lead": [
+   {
+    "id": "contact",
+    "label": "Verify phone + email are on file",
+    "cta": "👁 View",
+    "action": "navigate"
+   },
+   {
+    "id": "tags",
+    "label": "Confirm source + intent tags applied",
+    "cta": "🏷 Tags",
+    "action": "tag"
+   },
+   {
+    "id": "speed",
+    "label": "Call contact within 5 min — speed-to-lead (calls only count)",
+    "cta": "📞 Call",
+    "action": "call"
+   }
+  ],
+  "Low Credit Score (Not Qualified)": [
+   {
+    "id": "fico",
+    "label": "Confirm FICO is below program minimum",
+    "cta": "📊 FICO",
+    "action": "field"
+   },
+   {
+    "id": "reason",
+    "label": "Set Reason Can't Buy Now",
+    "cta": "🏷 Reason",
+    "action": "reason"
+   },
+   {
+    "id": "move",
+    "label": "Move to Long-Term Lead if salvageable",
+    "cta": "➡ Move",
+    "action": "stage"
+   }
+  ],
+  "Attempting Contact": [
+   {
+    "id": "call",
+    "label": "Auto call attempt + set disposition (2×/3h → 2×/day → 1×/day)",
+    "cta": "📞 Call",
+    "action": "call"
+   },
+   {
+    "id": "vm",
+    "label": "Voicemail drop auto-left on no-answer",
+    "cta": "🎙 VM",
+    "action": "note"
+   },
+   {
+    "id": "log",
+    "label": "Log result / disposition in Notes",
+    "cta": "📝 Log",
+    "action": "note"
+   },
+   {
+    "id": "route",
+    "label": "After 33 calls → Ghosted (auto text + email)",
+    "cta": "➡ Route",
+    "action": "stage"
+   }
+  ],
+  "Engaged": [
+   {
+    "id": "reason",
+    "label": "Set reason / intent (from dropdown)",
+    "cta": "🏷 Reason",
+    "action": "reason"
+   },
+   {
+    "id": "route",
+    "label": "Route: Hot Lead / Future Opp / Long-Term",
+    "cta": "➡ Route",
+    "action": "stage"
+   },
+   {
+    "id": "outcome",
+    "label": "If negative → choose Ghosted or Dead/Abandon",
+    "cta": "➡ Outcome",
+    "action": "stage"
+   }
+  ],
+  "Appointment Set": [
+   {
+    "id": "confirm",
+    "label": "Confirm calendar booking",
+    "cta": "📅 Confirm",
+    "action": "calendar"
+   },
+   {
+    "id": "remind",
+    "label": "Reminders auto-armed: 24h / 2h / 15min",
+    "cta": "⏰ Remind",
+    "action": "navigate"
+   },
+   {
+    "id": "outcome",
+    "label": "After appt date → set outcome (showed / no-show)",
+    "cta": "✓ Outcome",
+    "action": "stage"
+   }
+  ],
+  "Appointment Showed": [
+   {
+    "id": "showed",
+    "label": "Mark showed + log call",
+    "cta": "✓ Showed",
+    "action": "field"
+   },
+   {
+    "id": "qualify",
+    "label": "Run qualification (AI / Maria)",
+    "cta": "📊 Qualify",
+    "action": "navigate"
+   },
+   {
+    "id": "advance",
+    "label": "Advance: Hot / Long-Term / App Sent",
+    "cta": "➡ Route",
+    "action": "stage"
+   }
+  ],
+  "Appointment No-Show": [
+   {
+    "id": "resched",
+    "label": "Reschedule link SMS + email auto-sent (<5 min)",
+    "cta": "📨 Reschedule",
+    "action": "note"
+   },
+   {
+    "id": "second",
+    "label": "2nd miss → Maria angle + flag setter",
+    "cta": "📞 Maria",
+    "action": "call"
+   },
+   {
+    "id": "third",
+    "label": "3rd miss → Dead/Abandon (missed-3-appointments)",
+    "cta": "➡ Abandon",
+    "action": "stage"
+   }
+  ],
+  "Hot Lead (1-3 months)": [
+   {
+    "id": "intent",
+    "label": "Confirm hot intent tag (Buyer / Investor / Refi)",
+    "cta": "🏷 Tag",
+    "action": "tag"
+   },
+   {
+    "id": "nurture",
+    "label": "Hot Lead nurture running + weekly follow-up",
+    "cta": "📨 Nurture",
+    "action": "navigate"
+   },
+   {
+    "id": "task",
+    "label": "Weekly call task → Maria (lead + agent)",
+    "cta": "📞 Task",
+    "action": "call"
+   }
+  ],
+  "Future Opportunity (3-9 Months)": [
+   {
+    "id": "reason",
+    "label": "Set reason can't buy now",
+    "cta": "🏷 Reason",
+    "action": "reason"
+   },
+   {
+    "id": "ready",
+    "label": "Set Expected Ready Date",
+    "cta": "📅 Date",
+    "action": "setfield",
+    "meta": {
+     "key": "expectedReady",
+     "quick": true
+    }
+   },
+   {
+    "id": "nurture",
+    "label": "Nurture running (slower cadence than Hot Lead)",
+    "cta": "📨 Nurture",
+    "action": "navigate"
+   }
+  ],
+  "Long-Term Lead (9+ months)": [
+   {
+    "id": "reason",
+    "label": "Set Reason Can't Buy Now",
+    "cta": "🏷 Reason",
+    "action": "reason"
+   },
+   {
+    "id": "ready",
+    "label": "Set Expected Ready Date",
+    "cta": "📅 Date",
+    "action": "setfield",
+    "meta": {
+     "key": "expectedReady"
+    }
+   },
+   {
+    "id": "nurture",
+    "label": "Reason-specific nurture active",
+    "cta": "📨 Nurture",
+    "action": "navigate"
+   },
+   {
+    "id": "review",
+    "label": "After 12 months → require stage change",
+    "cta": "➡ Review",
+    "action": "stage"
+   }
+  ],
+  "Pre-Approved - Not Actively Searching": [
+   {
+    "id": "pause",
+    "label": "Confirm pre-approval paused",
+    "cta": "⏸ Pause",
+    "action": "field"
+   },
+   {
+    "id": "slow",
+    "label": "Slower cadence active (bi-weekly / monthly)",
+    "cta": "📨 Cadence",
+    "action": "navigate"
+   },
+   {
+    "id": "expiry",
+    "label": "Pre-approval expiry alert armed (90 days)",
+    "cta": "⏰ Expiry",
+    "action": "navigate"
+   }
+  ],
+  "Investors": [
+   {
+    "id": "welcome",
+    "label": "Send investor welcome email",
+    "cta": "📨 Welcome",
+    "action": "note"
+   },
+   {
+    "id": "follow",
+    "label": "Quarterly follow-up task active",
+    "cta": "📞 Task",
+    "action": "call"
+   }
+  ],
+  "Application Sent (LOS)": [
+   {
+    "id": "link",
+    "label": "Send LOS 1003 link + welcome email (LOS email + video)",
+    "cta": "🔗 Send",
+    "action": "navigate"
+   },
+   {
+    "id": "aila",
+    "label": "Aila auto-fills 1003 into LOS",
+    "cta": "⚙ Aila",
+    "action": "navigate"
+   },
+   {
+    "id": "sync",
+    "label": "Write LOS Loan ID + Direct URL (auto-sync)",
+    "cta": "📝 Sync",
+    "action": "field"
+   },
+   {
+    "id": "agent",
+    "label": "Intro SMS to referring agent (App Intake)",
+    "cta": "📨 Agent",
+    "action": "note"
+   }
+  ],
+  "Qualification (LOS)": [
+   {
+    "id": "needs",
+    "label": "Needs list shown in GHL (no need to open LOS)",
+    "cta": "📋 Needs",
+    "action": "navigate"
+   },
+   {
+    "id": "docs",
+    "label": "Collect income docs by employment type",
+    "cta": "📑 Docs",
+    "action": "navigate"
+   },
+   {
+    "id": "auth",
+    "label": "Client signs credit authorization doc (credit pulled in LOS last)",
+    "cta": "✍ Auth",
+    "action": "navigate"
+   },
+   {
+    "id": "agent",
+    "label": "Update referring agent — direct call + auto message",
+    "cta": "📞 Agent",
+    "action": "call"
+   }
+  ],
+  "Pre-Approved (LOS)": [
+   {
+    "id": "letter",
+    "label": "Issue pre-approval letter",
+    "cta": "📨 Letter",
+    "action": "navigate"
+   },
+   {
+    "id": "active",
+    "label": "Tag actively-searching",
+    "cta": "🏷 Tag",
+    "action": "tag"
+   },
+   {
+    "id": "weekly",
+    "label": "Weekly 'send me the property' SMS active",
+    "cta": "📨 Weekly",
+    "action": "navigate"
+   },
+   {
+    "id": "agent",
+    "label": "Pre-approved update to agent 🎉",
+    "cta": "📨 Agent",
+    "action": "note"
+   }
+  ],
+  "Loan Setup (LOS)": [
+   {
+    "id": "contract",
+    "label": "Confirm property under contract",
+    "cta": "📄 Contract",
+    "action": "field"
+   },
+   {
+    "id": "intro",
+    "label": "Intro call + text to agent (full LOS handoff)",
+    "cta": "📞 Call",
+    "action": "call"
+   },
+   {
+    "id": "tracker",
+    "label": "Start date tracker between steps",
+    "cta": "⏱ Track",
+    "action": "navigate"
+   }
+  ],
+  "Disclosed (LOS)": [
+   {
+    "id": "disc",
+    "label": "Send initial disclosures",
+    "cta": "📨 Disclose",
+    "action": "navigate"
+   },
+   {
+    "id": "signed",
+    "label": "Confirm borrower signed initial docs",
+    "cta": "✓ Signed",
+    "action": "field"
+   }
+  ],
+  "Submitted to UW (LOS)": [
+   {
+    "id": "submit",
+    "label": "Submit file to underwriting",
+    "cta": "📤 Submit",
+    "action": "navigate"
+   },
+   {
+    "id": "agent",
+    "label": "Notify referring agent — in UW",
+    "cta": "📨 Agent",
+    "action": "note"
+   },
+   {
+    "id": "track",
+    "label": "Start processing-time tracker",
+    "cta": "⏱ Track",
+    "action": "navigate"
+   }
+  ],
+  "Approved w/ Conditions (LOS)": [
+   {
+    "id": "ptcd",
+    "label": "Pull conditions (PTCD) list",
+    "cta": "📋 PTCD",
+    "action": "navigate"
+   },
+   {
+    "id": "gather",
+    "label": "Help borrower gather condition items",
+    "cta": "📑 Collect",
+    "action": "navigate"
+   },
+   {
+    "id": "agent",
+    "label": "Conditional approval update to agent 🎉",
+    "cta": "📨 Agent",
+    "action": "note"
+   }
+  ],
+  "Re-submittal (LOS)": [
+   {
+    "id": "resub",
+    "label": "Re-submit to UW with cleared conditions",
+    "cta": "📤 Resub",
+    "action": "navigate"
+   },
+   {
+    "id": "track",
+    "label": "Track condition-clearing time",
+    "cta": "⏱ Track",
+    "action": "navigate"
+   }
+  ],
+  "Clear to Close (LOS)": [
+   {
+    "id": "ctc",
+    "label": "Confirm Clear to Close",
+    "cta": "✅ CTC",
+    "action": "field"
+   },
+   {
+    "id": "call",
+    "label": "Auto call + text all parties (LOS sends email)",
+    "cta": "📞 Call",
+    "action": "call"
+   },
+   {
+    "id": "agent",
+    "label": "Clear-to-close update to agent ✅",
+    "cta": "📨 Agent",
+    "action": "note"
+   }
+  ],
+  "Docs out (LOS)": [
+   {
+    "id": "docs",
+    "label": "Final closing docs out",
+    "cta": "📄 Docs",
+    "action": "navigate"
+   },
+   {
+    "id": "call",
+    "label": "LO calls borrower to review the numbers",
+    "cta": "📞 Call",
+    "action": "call"
+   }
+  ],
+  "Docs signed (LOS)": [
+   {
+    "id": "signed",
+    "label": "Confirm final docs signed",
+    "cta": "✓ Signed",
+    "action": "field"
+   }
+  ],
+  "Funded (LOS)": [
+   {
+    "id": "funded",
+    "label": "Confirm loan funded",
+    "cta": "💰 Funded",
+    "action": "field"
+   },
+   {
+    "id": "capture",
+    "label": "Capture loan amount + note rate",
+    "cta": "📝 Capture",
+    "action": "field"
+   },
+   {
+    "id": "refi",
+    "label": "Refi rate tracker active (vs Fannie Mae rate)",
+    "cta": "📈 Refi",
+    "action": "navigate"
+   },
+   {
+    "id": "agent",
+    "label": "Funded thank-you to referring agent 🎉",
+    "cta": "📨 Agent",
+    "action": "note"
+   }
+  ],
+  "Post-Close Nurture": [
+   {
+    "id": "calls",
+    "label": "Calls auto-scheduled: annual rate call + equity call every 6 mo",
+    "cta": "📅 Calls",
+    "action": "calendar"
+   },
+   {
+    "id": "tracker",
+    "label": "On Fannie Mae rate tracker (automatic)",
+    "cta": "📈 Tracker",
+    "action": "navigate"
+   },
+   {
+    "id": "address",
+    "label": "Capture property address (holiday postcards)",
+    "cta": "🏠 Address",
+    "action": "field"
+   }
+  ],
+  "Refi Rate Watcher": [
+   {
+    "id": "rate",
+    "label": "Set current Note Rate (%)",
+    "cta": "📊 Rate",
+    "action": "field",
+    "meta": {
+     "field": "UqebkESr9GxnS22awBFK",
+     "label": "Current Note Rate — e.g. 6.875"
+    }
+   },
+   {
+    "id": "balance",
+    "label": "Set current loan balance ($)",
+    "cta": "💰 Balance",
+    "action": "field",
+    "meta": {
+     "field": "e1XZTVAyc3b3Uga7VVbA",
+     "label": "Current Loan Balance — e.g. 350000"
+    }
+   },
+   {
+    "id": "target",
+    "label": "Set Target Refi Rate (default current − 50bps)",
+    "cta": "🎯 Target",
+    "action": "field",
+    "meta": {
+     "field": "R4KPWZvQcSS575sMKCJp",
+     "label": "Target Refi Rate — e.g. 5.875"
+    }
+   },
+   {
+    "id": "watch",
+    "label": "Add to Refi Watcher (daily 7AM rate-check)",
+    "cta": "⏰ Watch",
+    "action": "setfield",
+    "meta": {
+     "key": "refiWatch"
+    }
+   },
+   {
+    "id": "status",
+    "label": "Rate status → Watching / Approaching / Hit",
+    "cta": "📈 Status",
+    "action": "setfield",
+    "meta": {
+     "key": "refiStatus"
+    }
+   },
+   {
+    "id": "confirm",
+    "label": "'On the watch list' SMS sent",
+    "cta": "📨 Confirm",
+    "action": "note",
+    "meta": {
+     "template": "On the refi watch list — confirmation SMS sent. "
+    }
+   }
+  ],
+  "Application Abandoned": [
+   {
+    "id": "type",
+    "label": "Tag hot vs cold abandon",
+    "cta": "🏷 Tag",
+    "action": "tag"
+   },
+   {
+    "id": "drip",
+    "label": "1-year reactivation drip active + automated",
+    "cta": "📨 Drip",
+    "action": "navigate"
+   },
+   {
+    "id": "maria",
+    "label": "Maria reactivation task created",
+    "cta": "📞 Maria",
+    "action": "call"
+   }
+  ],
+  "Lead Long Term Nurture (Not Converted)": [
+   {
+    "id": "reason",
+    "label": "Confirm Reason Can't Buy Now set",
+    "cta": "🏷 Reason",
+    "action": "reason"
+   },
+   {
+    "id": "ready",
+    "label": "Set Expected Ready Date",
+    "cta": "📅 Date",
+    "action": "setfield",
+    "meta": {
+     "key": "expectedReady"
+    }
+   },
+   {
+    "id": "nurture",
+    "label": "Long-term nurture active",
+    "cta": "📨 Nurture",
+    "action": "navigate"
+   }
+  ],
+  "Ghosted": [
+   {
+    "id": "calls",
+    "label": "Confirm 33 no-answer calls logged",
+    "cta": "📞 33 calls",
+    "action": "navigate"
+   },
+   {
+    "id": "reply",
+    "label": "Any reply → back to Engaged",
+    "cta": "➡ Route",
+    "action": "stage"
+   }
+  ],
+  "Dead /Abandon": [
+   {
+    "id": "reason",
+    "label": "Tag disqualify reason",
+    "cta": "🏷 Reason",
+    "action": "tag"
+   },
+   {
+    "id": "stop",
+    "label": "Confirm zero automation / removed from drips",
+    "cta": "🚫 Stop",
+    "action": "navigate"
+   }
+  ]
+ }
+}

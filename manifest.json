@@ -2,7 +2,8 @@
  "version": "ab3bef18352a",
  "locations": {
   "XspbsMlB3DWwt3sKLgUr": [
-   "locations/XspbsMlB3DWwt3sKLgUr/widgets.js"
+   "kit/dist/sites/mortgage.js",
+   "kit/dist/bmw-core.js"
   ]
  }
 }

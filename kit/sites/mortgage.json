@@ -1,0 +1,10 @@
+{
+ "slug": "mortgage",
+ "name": "Mortgage Automation Pack",
+ "brand": "Mortgage Pulse",
+ "locations": ["XspbsMlB3DWwt3sKLgUr"],
+ "theme": { "accent": "#C9A35F" },
+ "modules": ["skin", "contrast", "sidebar", "pulse", "board"],
+ "pulse": { "checklistField": "Pulse Checklist State", "playbook": "mortgage" },
+ "apiProxy": ""
+}
