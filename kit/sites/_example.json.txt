@@ -1,0 +1,10 @@
+{
+ "slug": "my-client",
+ "name": "My Client",
+ "brand": "My Client Pulse",
+ "locations": ["<GHL sub-account id>"],
+ "theme": { "accent": "#14B8A6" },
+ "modules": ["skin", "contrast", "sidebar", "pulse", "board"],
+ "pulse": { "checklistField": "Pulse Checklist State", "playbook": "dental" },
+ "apiProxy": ""
+}

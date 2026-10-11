@@ -1,0 +1,151 @@
+{
+ "at": "2026-10-11T16:38:32.633Z",
+ "results": [
+  {
+   "site": "collision-repair",
+   "ok": true,
+   "stage": "Insurance Claim Filed",
+   "items": 2,
+   "brand": "Collision Repair Pulse",
+   "accent": "rgb(238,58,58)",
+   "hueOk": true,
+   "modules": {
+    "skin": true,
+    "board": true,
+    "sidebar": true,
+    "banner": true
+   }
+  },
+  {
+   "site": "dental",
+   "ok": true,
+   "stage": "Consultation Showed",
+   "items": 2,
+   "brand": "Dental Pulse",
+   "accent": "rgb(62,234,215)",
+   "hueOk": true,
+   "modules": {
+    "skin": true,
+    "board": true,
+    "sidebar": true,
+    "banner": true
+   }
+  },
+  {
+   "site": "hvac",
+   "ok": true,
+   "stage": "Service Visit Booked",
+   "items": 2,
+   "brand": "HVAC Pulse",
+   "accent": "rgb(47,220,249)",
+   "hueOk": true,
+   "modules": {
+    "skin": true,
+    "board": true,
+    "sidebar": true,
+    "banner": true
+   }
+  },
+  {
+   "site": "insurance",
+   "ok": true,
+   "stage": "Quote Sent",
+   "items": 2,
+   "brand": "Insurance Pulse",
+   "accent": "rgb(50,125,246)",
+   "hueOk": true,
+   "modules": {
+    "skin": true,
+    "board": true,
+    "sidebar": true,
+    "banner": true
+   }
+  },
+  {
+   "site": "mortgage",
+   "ok": true,
+   "stage": "Engaged",
+   "items": 3,
+   "brand": "Mortgage Pulse",
+   "accent": "rgb(201,163,95)",
+   "hueOk": true,
+   "modules": {
+    "skin": true,
+    "board": true,
+    "sidebar": true,
+    "banner": true
+   }
+  },
+  {
+   "site": "personal-injury",
+   "ok": true,
+   "stage": "Case Review",
+   "items": 2,
+   "brand": "Personal Injury Pulse",
+   "accent": "rgb(111,52,244)",
+   "hueOk": true,
+   "modules": {
+    "skin": true,
+    "board": true,
+    "sidebar": true,
+    "banner": true
+   }
+  },
+  {
+   "site": "physical-therapy",
+   "ok": true,
+   "stage": "Evaluation Booked",
+   "items": 4,
+   "brand": "Physical Therapy Pulse",
+   "accent": "rgb(72,224,128)",
+   "hueOk": true,
+   "modules": {
+    "skin": true,
+    "board": true,
+    "sidebar": true,
+    "banner": true
+   }
+  },
+  {
+   "site": "roofing",
+   "ok": true,
+   "stage": "Storm Damage Confirmed",
+   "items": 2,
+   "brand": "Roofing Pulse",
+   "accent": "rgb(250,130,46)",
+   "hueOk": true,
+   "modules": {
+    "skin": true,
+    "board": true,
+    "sidebar": true,
+    "banner": true
+   }
+  },
+  {
+   "site": "solar",
+   "ok": true,
+   "stage": "Site Survey Booked",
+   "items": 2,
+   "brand": "Solar Pulse",
+   "accent": "rgb(166,234,62)",
+   "hueOk": true,
+   "modules": {
+    "skin": true,
+    "board": true,
+    "sidebar": true,
+    "banner": true
+   }
+  },
+  {
+   "site": "off:rYs2au5JAMWDyBxuqcul",
+   "ok": true,
+   "off": {
+    "active": false,
+    "skin": false,
+    "board": false,
+    "sidebar": false,
+    "accentVar": ""
+   }
+  }
+ ]
+}
