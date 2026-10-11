@@ -1,4 +1,4 @@
-/* BMW widget engine df1c540098d7 - white-label GHL widgets. Docs: kit/README.md */
+/* BMW widget engine 73114a860bbd - white-label GHL widgets. Docs: kit/README.md */
 /* BMW widget engine (white-label). One file for every sub-account; what changes per account is a SITE config.
 
    A site is a plain object pushed onto window.BMW_SITES (see kit/sites/*.json and kit/README.md):
@@ -109,7 +109,7 @@
 
   window.BMW = {
     __core: 1,
-    version: "df1c540098d7",
+    version: "73114a860bbd",
     loc: function () { return cur.loc; },
     active: function () { return cur.site; },
     on: function (mod) {

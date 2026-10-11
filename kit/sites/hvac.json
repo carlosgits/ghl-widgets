@@ -1,0 +1,23 @@
+{
+ "slug": "hvac",
+ "name": "HVAC Automation Pack",
+ "brand": "HVAC Pulse",
+ "locations": [
+  "LqE8nktxBpREd3xajdiH"
+ ],
+ "theme": {
+  "accent": "#06B6D4"
+ },
+ "modules": [
+  "skin",
+  "contrast",
+  "sidebar",
+  "pulse",
+  "board"
+ ],
+ "pulse": {
+  "checklistField": "Pulse Checklist State",
+  "playbook": "hvac"
+ },
+ "apiProxy": ""
+}

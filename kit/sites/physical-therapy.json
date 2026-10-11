@@ -1,0 +1,23 @@
+{
+ "slug": "physical-therapy",
+ "name": "Physical Therapy Automation Pack",
+ "brand": "Physical Therapy Pulse",
+ "locations": [
+  "2hCtf0QkezIIs25YiS2T"
+ ],
+ "theme": {
+  "accent": "#22C55E"
+ },
+ "modules": [
+  "skin",
+  "contrast",
+  "sidebar",
+  "pulse",
+  "board"
+ ],
+ "pulse": {
+  "checklistField": "Pulse Checklist State",
+  "playbook": "physical-therapy"
+ },
+ "apiProxy": ""
+}

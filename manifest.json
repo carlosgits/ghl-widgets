@@ -28,6 +28,14 @@
   "h8MWFSM5F1Q6TEO9dQqf": [
    "kit/dist/sites/solar.js",
    "kit/dist/bmw-core.js"
+  ],
+  "LqE8nktxBpREd3xajdiH": [
+   "kit/dist/sites/hvac.js",
+   "kit/dist/bmw-core.js"
+  ],
+  "2hCtf0QkezIIs25YiS2T": [
+   "kit/dist/sites/physical-therapy.js",
+   "kit/dist/bmw-core.js"
   ]
  }
 }

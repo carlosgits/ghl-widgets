@@ -444,5 +444,146 @@
     "Multiple Areas"
    ]
   }
+ ],
+ "hvac": [
+  {
+   "name": "Service Needed",
+   "dataType": "SINGLE_OPTIONS",
+   "options": [
+    "Repair",
+    "Replacement Quote",
+    "Maintenance Tune-Up",
+    "New Installation",
+    "Indoor Air Quality"
+   ]
+  },
+  {
+   "name": "System Type",
+   "dataType": "SINGLE_OPTIONS",
+   "options": [
+    "Central AC",
+    "Heat Pump",
+    "Ductless Mini-Split",
+    "Furnace",
+    "Package Unit"
+   ]
+  },
+  {
+   "name": "Property Type",
+   "dataType": "SINGLE_OPTIONS",
+   "options": [
+    "Single Family",
+    "Townhome",
+    "Condo",
+    "Commercial"
+   ]
+  },
+  {
+   "name": "Maintenance Plan",
+   "dataType": "SINGLE_OPTIONS",
+   "options": [
+    "None",
+    "Silver",
+    "Gold",
+    "Platinum"
+   ]
+  },
+  {
+   "name": "Last Service Date",
+   "dataType": "DATE",
+   "options": []
+  },
+  {
+   "name": "Urgency",
+   "dataType": "SINGLE_OPTIONS",
+   "options": [
+    "Emergency Today",
+    "This Week",
+    "Planning Ahead"
+   ]
+  },
+  {
+   "name": "Estimate Amount",
+   "dataType": "MONETORY",
+   "options": []
+  },
+  {
+   "name": "Pulse Checklist State",
+   "dataType": "LARGE_TEXT",
+   "options": []
+  },
+  {
+   "name": "System Age (Years)",
+   "dataType": "NUMERICAL",
+   "options": []
+  }
+ ],
+ "physical-therapy": [
+  {
+   "name": "Pulse Checklist State",
+   "dataType": "LARGE_TEXT",
+   "options": []
+  },
+  {
+   "name": "Referring Physician",
+   "dataType": "TEXT",
+   "options": []
+  },
+  {
+   "name": "Primary Complaint",
+   "dataType": "SINGLE_OPTIONS",
+   "options": [
+    "Low Back Pain",
+    "Neck Pain",
+    "Knee Pain",
+    "Shoulder Pain",
+    "Post-Surgery Rehab",
+    "Sports Injury",
+    "Balance and Fall Prevention"
+   ]
+  },
+  {
+   "name": "Pain Level (1-10)",
+   "dataType": "NUMERICAL",
+   "options": []
+  },
+  {
+   "name": "Evaluation Date",
+   "dataType": "DATE",
+   "options": []
+  },
+  {
+   "name": "Visits Authorized",
+   "dataType": "NUMERICAL",
+   "options": []
+  },
+  {
+   "name": "Visits Completed",
+   "dataType": "NUMERICAL",
+   "options": []
+  },
+  {
+   "name": "Referral Source",
+   "dataType": "SINGLE_OPTIONS",
+   "options": [
+    "Physician Referral",
+    "Direct Access",
+    "Google Search",
+    "Insurance Directory",
+    "Friend or Family"
+   ]
+  },
+  {
+   "name": "Insurance Carrier",
+   "dataType": "SINGLE_OPTIONS",
+   "options": [
+    "Medicare",
+    "Blue Cross Blue Shield",
+    "Aetna",
+    "Cigna",
+    "UnitedHealthcare",
+    "Self Pay"
+   ]
+  }
  ]
 }
